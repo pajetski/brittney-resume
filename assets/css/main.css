@@ -47,7 +47,7 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 14px clamp(18px, 5vw, 64px);
+  padding: 12px clamp(18px, 5vw, 64px);
   background: rgba(250, 248, 244, 0.92);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(16px);
@@ -99,9 +99,9 @@ a {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.75fr);
   align-items: center;
-  gap: clamp(28px, 6vw, 84px);
-  min-height: calc(100vh - 67px);
-  padding: clamp(42px, 8vw, 96px) clamp(18px, 5vw, 64px);
+  gap: clamp(28px, 5vw, 72px);
+  min-height: clamp(640px, calc(100svh - 63px), 760px);
+  padding: clamp(40px, 6vw, 76px) clamp(18px, 5vw, 64px);
   border-bottom: 1px solid var(--line);
 }
 
@@ -185,7 +185,7 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 34px;
+  margin-top: 28px;
 }
 
 .button {
@@ -215,6 +215,8 @@ h3 {
 
 .portrait {
   position: relative;
+  justify-self: end;
+  width: min(100%, 470px);
   overflow: hidden;
   border-radius: 8px;
   box-shadow: var(--shadow);
@@ -230,7 +232,7 @@ h3 {
 }
 
 .section {
-  padding: clamp(56px, 9vw, 110px) clamp(18px, 5vw, 64px);
+  padding: clamp(48px, 7vw, 86px) clamp(18px, 5vw, 64px);
   border-bottom: 1px solid var(--line);
 }
 
@@ -402,12 +404,15 @@ address a:hover {
 @media (max-width: 850px) {
   .site-header {
     position: static;
-    align-items: flex-start;
-    flex-direction: column;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px 18px;
   }
 
   .nav {
-    width: 100%;
+    flex: 1 1 100%;
+    justify-content: flex-start;
     overflow-x: auto;
     padding-bottom: 4px;
   }
@@ -422,6 +427,10 @@ address a:hover {
 
   .hero {
     min-height: auto;
+    align-items: start;
+    gap: 26px;
+    padding-top: 34px;
+    padding-bottom: 42px;
   }
 
   .hero::before {
@@ -434,7 +443,8 @@ address a:hover {
   }
 
   .portrait {
-    max-width: 480px;
+    justify-self: center;
+    width: min(100%, 420px);
   }
 
   .image-band,
@@ -461,12 +471,66 @@ address a:hover {
 }
 
 @media (max-width: 520px) {
+  body {
+    font-size: 15px;
+  }
+
+  .site-header {
+    padding: 10px 16px;
+  }
+
+  .brand {
+    gap: 8px;
+    font-size: 0.98rem;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+    font-size: 0.72rem;
+  }
+
+  .nav {
+    gap: 16px;
+    font-size: 0.88rem;
+  }
+
+  .hero {
+    gap: 22px;
+    padding: 30px 16px 36px;
+  }
+
+  .eyebrow {
+    margin-bottom: 8px;
+    font-size: 0.74rem;
+  }
+
   h1 {
-    font-size: 3.3rem;
+    margin-bottom: 8px;
+    font-size: clamp(2.8rem, 16vw, 3.6rem);
+    line-height: 0.92;
   }
 
   h2 {
-    font-size: 2.15rem;
+    margin-bottom: 14px;
+    font-size: clamp(1.85rem, 10vw, 2.25rem);
+    line-height: 1.04;
+  }
+
+  .title {
+    margin-bottom: 14px;
+    font-size: 1.22rem;
+    line-height: 1.18;
+  }
+
+  .intro {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .hero-actions {
+    gap: 10px;
+    margin-top: 22px;
   }
 
   .hero-actions,
@@ -475,7 +539,53 @@ address a:hover {
   }
 
   .button {
+    min-height: 46px;
     width: 100%;
+  }
+
+  .portrait {
+    width: min(100%, 330px);
+  }
+
+  .section {
+    padding: 40px 16px;
+  }
+
+  .profile-grid,
+  .split,
+  .credentials,
+  .contact {
+    gap: 22px;
+  }
+
+  .quick-list,
+  .skill-list {
+    gap: 8px;
+  }
+
+  .quick-list span,
+  .skill-list li {
+    padding: 8px 10px;
+    font-size: 0.92rem;
+  }
+
+  .impact-grid {
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .impact-grid article {
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .resume-list p {
+    padding-left: 14px;
+  }
+
+  address a,
+  address span {
+    padding: 12px 14px;
   }
 }
 
