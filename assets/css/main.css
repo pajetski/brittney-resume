@@ -96,6 +96,83 @@ a {
   color: var(--teal);
 }
 
+.qualification-ticker {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(34, 36, 38, 0.12);
+  background:
+    linear-gradient(90deg, rgba(34, 36, 38, 0.98), rgba(13, 78, 74, 0.96));
+  color: #fff;
+}
+
+.qualification-ticker::before,
+.qualification-ticker::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  width: min(12vw, 120px);
+  content: "";
+  pointer-events: none;
+}
+
+.qualification-ticker::before {
+  left: 0;
+  background: linear-gradient(90deg, rgba(34, 36, 38, 1), rgba(34, 36, 38, 0));
+}
+
+.qualification-ticker::after {
+  right: 0;
+  background: linear-gradient(270deg, rgba(13, 78, 74, 1), rgba(13, 78, 74, 0));
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 38s linear infinite;
+}
+
+.qualification-ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+.ticker-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 12px;
+}
+
+.ticker-group span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.ticker-group span::before {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--clay);
+  box-shadow: 0 0 14px rgba(241, 181, 157, 0.72);
+  content: "";
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .hero {
   position: relative;
   isolation: isolate;
@@ -625,6 +702,24 @@ address a:hover {
     font-size: 15px;
   }
 
+  .qualification-ticker::before,
+  .qualification-ticker::after {
+    width: 42px;
+  }
+
+  .ticker-track {
+    animation-duration: 30s;
+  }
+
+  .ticker-group {
+    gap: 10px;
+    padding: 8px 10px;
+  }
+
+  .ticker-group span {
+    font-size: 0.76rem;
+  }
+
   .site-header {
     padding: 10px 16px;
   }
@@ -775,6 +870,21 @@ address a:hover {
 
 @media (prefers-reduced-motion: reduce) {
   .hero-video {
+    display: none;
+  }
+
+  .ticker-track {
+    width: 100%;
+    animation: none;
+  }
+
+  .ticker-group {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .ticker-group[aria-hidden="true"] {
     display: none;
   }
 
