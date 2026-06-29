@@ -238,6 +238,7 @@ h3 {
 
 .profile-grid,
 .split,
+.bio-section,
 .credentials,
 .contact {
   display: grid;
@@ -247,6 +248,7 @@ h3 {
 
 .profile-grid p,
 .split p,
+.bio-section p,
 .credentials p,
 .contact p {
   max-width: 760px;
@@ -272,6 +274,38 @@ h3 {
   background: rgba(255, 255, 255, 0.65);
   color: var(--ink);
   font-weight: 750;
+}
+
+.bio-section {
+  background:
+    linear-gradient(90deg, rgba(18, 107, 102, 0.08), transparent 58%),
+    var(--surface);
+}
+
+.bio-copy {
+  position: relative;
+  display: grid;
+  gap: 16px;
+  padding-left: 24px;
+  border-left: 5px solid var(--teal);
+}
+
+.bio-copy p {
+  margin: 0;
+}
+
+.text-link {
+  justify-self: start;
+  margin-top: 4px;
+  color: var(--teal-dark);
+  font-weight: 850;
+  text-decoration-color: rgba(18, 107, 102, 0.35);
+  text-underline-offset: 5px;
+}
+
+.text-link:hover {
+  color: var(--clay);
+  text-decoration-color: rgba(185, 95, 63, 0.55);
 }
 
 .skill-heatmap {
@@ -527,6 +561,7 @@ address a:hover {
   .hero,
   .profile-grid,
   .split,
+  .bio-section,
   .credentials,
   .contact {
     grid-template-columns: 1fr;
@@ -664,9 +699,16 @@ address a:hover {
 
   .profile-grid,
   .split,
+  .bio-section,
   .credentials,
   .contact {
     gap: 22px;
+  }
+
+  .bio-copy {
+    gap: 14px;
+    padding-left: 16px;
+    border-left-width: 4px;
   }
 
   .quick-list,

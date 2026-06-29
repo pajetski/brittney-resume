@@ -12,7 +12,7 @@ Static resume and professional presence site for Brittney Chase.
 - `assets/images/web`: Optimized JPG and WebP images for the live site.
 - `assets/video/originals`: Preserved source video.
 - `assets/video/web`: Compressed video and poster image for the hero.
-- `assets/docs`: Resume PDF.
+- `assets/docs`: Resume and professional bio PDFs.
 
 ## Image Labels
 
