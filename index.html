@@ -18,7 +18,12 @@
     <meta property="og:url" content="https://brittneychase.netlify.app/">
     <meta property="og:image" content="assets/images/web/brittney-chase-headshot.jpg">
     <link rel="canonical" href="https://brittneychase.netlify.app/">
+    <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+    <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
     <link rel="preload" as="image" href="assets/images/web/brittney-chase-headshot.webp">
+    <link rel="preload" as="video" href="assets/video/web/brittney-chase-hero-waves-code.mp4" type="video/mp4">
     <link rel="stylesheet" href="assets/css/main.css">
   </head>
   <body>
@@ -37,6 +42,17 @@
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
+        <video
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="assets/video/web/brittney-chase-hero-waves-code-poster.jpg"
+          aria-hidden="true"
+        >
+          <source src="assets/video/web/brittney-chase-hero-waves-code.mp4" type="video/mp4">
+        </video>
         <div class="hero-copy">
           <p class="eyebrow">Encinitas, California</p>
           <h1 id="hero-title">Brittney Chase</h1>

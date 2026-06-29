@@ -7,8 +7,11 @@ Static resume and professional presence site for Brittney Chase.
 - `index.html`: Main website page.
 - `assets/css/main.css`: Site styling.
 - `assets/js/main.js`: Small browser enhancements.
+- `assets/favicon`: Favicon, app icons, and web manifest.
 - `assets/images/originals`: Preserved source images with descriptive labels.
 - `assets/images/web`: Optimized JPG and WebP images for the live site.
+- `assets/video/originals`: Preserved source video.
+- `assets/video/web`: Compressed video and poster image for the hero.
 - `assets/docs`: Resume PDF.
 
 ## Image Labels
